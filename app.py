@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for
 app = Flask(__name__)
 
 @app.route('/')
@@ -9,6 +9,6 @@ def index():
 def html_page(page_name):
     return render_template(page_name)
 
-# @app.route('/blog')
-# def blog():
-#     return 'These are my thoughts!'
+@app.route('/submit_form', methods=['POST', 'GET'])
+def submit_form():
+    return 'Form Submitted!'
